@@ -1,35 +1,36 @@
-// const, let
+// План заняття
+// Тема Числа
+//  Які бувають числа?
+// Математичні оператори та дії(+ - / * % **)
+// Практика
+// Методи
 
-// const name = "Artem";
+const integer = 9; // ціле число
+const float = 9.99; //число з плаваючою крапкою  або дробове
 
-// let age = 18;
-// console.log(age);
+console.log(0.2 + 0.1); // 0.3
 
-// age = 19;
+console.log(2 + 1); // 3
+console.log(4 - 1); // 3
+console.log(9 / 3); // 3
+console.log(3 * 3); // 9
+console.log(7 % 3); // 1
+console.log(3 ** 3); // 27
 
-// console.log(age);
+console.log("Ваша решта " + 5 + 5);
 
-// const age = prompt("Скільки тобі років?");
-// console.log(age);
+// Перетворення у число
+// () - Активація дії
+//Number - явне приведення до числа
+console.log(Number(prompt("Ціна?")));
+// + - не явне приведення
+console.log(+prompt("Решта"));
 
-// console.log(18 - age);
+// Оператори порівняння
 
-const name = "Artem"; // string
-const age = 18; // Number
-const isHappy = true; // boolean true ,false
-let empty = null; // null
-const undef = undefined; //undefined
+// > < == <= >= !=
 
-// symbol
-// bigint;
+console.log("10" == 10); // true - Порівняння без типів даних
+console.log("10" === 10); // false - Порівння з типами даних
 
-// empty = 1;
-
-console.log(typeof name);
-console.log(typeof age);
-console.log(typeof isHappy);
-console.log(typeof empty);
-console.log(typeof undef);
-
-console.log("" + 18 - 10);
-console.log(18 - 10 + "" + 10);
+const a = 10;
