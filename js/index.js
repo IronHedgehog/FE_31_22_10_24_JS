@@ -1,36 +1,21 @@
-// План заняття
-// Тема Числа
-//  Які бувають числа?
-// Математичні оператори та дії(+ - / * % **)
-// Практика
-// Методи
+const greetings = "Hello";
 
-const integer = 9; // ціле число
-const float = 9.99; //число з плаваючою крапкою  або дробове
+const myString = "Artem";
+const string = "a";
+const string1 = `a`;
+console.log(myString.length);
 
-console.log(0.2 + 0.1); // 0.3
+console.log(greetings + " " + myString); // конкатинація = додавання рядків
+console.log(`${greetings} ${myString}`); // інтерполяція
 
-console.log(2 + 1); // 3
-console.log(4 - 1); // 3
-console.log(9 / 3); // 3
-console.log(3 * 3); // 9
-console.log(7 % 3); // 1
-console.log(3 ** 3); // 27
+const test = "test";
 
-console.log("Ваша решта " + 5 + 5);
+console.log(test.toUpperCase());
+console.log(test.toLowerCase());
 
-// Перетворення у число
-// () - Активація дії
-//Number - явне приведення до числа
-console.log(Number(prompt("Ціна?")));
-// + - не явне приведення
-console.log(+prompt("Решта"));
+const spamWord = "sale";
+const message = "sAle";
 
-// Оператори порівняння
-
-// > < == <= >= !=
-
-console.log("10" == 10); // true - Порівняння без типів даних
-console.log("10" === 10); // false - Порівння з типами даних
-
-const a = 10;
+if (spamWord.toLowerCase() == message.toLowerCase()) {
+  console.log("ЦЕ спам");
+}
