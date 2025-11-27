@@ -25,4 +25,9 @@ console.log(parseInt(Math.random() * 100 + 1)); // від 0 до 1
 console.log(Math.max(20, 30, 25, 15));
 console.log(Math.min(20, 30, 25, 15));
 
-Math;
+console.log(Number.isNaN(20)); // чи в середені дужок не число?
+
+console.log(true == 1); //true
+console.log(false == 0); // true
+
+console.log(Math.sqrt(200));
