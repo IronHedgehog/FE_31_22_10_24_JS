@@ -1,4 +1,4 @@
-console.log(true && true && "ВАУ ЦЕ ПРАВДА"); // false
+console.log(true && "" && "ВАУ ЦЕ ПРАВДА"); // Він або повертає елемент на якому запнувся
 console.log("object" || (1 && 0)); //
 
 // "object"; -- true
@@ -38,3 +38,8 @@ if (cost <= 299) {
 } else {
   console.log(" У нас немає такого дорогого пакету бери інший");
 }
+
+const age = Number(prompt("Введіть Ваш вік?"));
+
+const isTrue =
+  age >= 18 ? console.log("Все ок") : console.log("Приходь пізніше");
