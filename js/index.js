@@ -1,45 +1,35 @@
-console.log(true && "" && "ВАУ ЦЕ ПРАВДА"); // Він або повертає елемент на якому запнувся
-console.log("object" || (1 && 0)); //
-
-// "object"; -- true
-// ||
-//  1 && 0; -- false
-
-// console.log("" || "kivi" || ("mango" && !0));
-
-// console.log("" || "kivi");
-// console.log("kivi" || );
-// console.log("mango" && !0);
-
-let goWalk = false;
-
-// const dish = confirm("Чи ти помив посуд");
-
-// const doHomework = confirm("Чи ти виконав домашнє завдання");
-
-// if (dish && doHomework) {
-//   goWalk = true;
+// if ("latte") {
+//   console.log("latte");
+// } else if (userChoice == "cappuchino") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else if (userChoice == "americano") {
+// } else {
+//   console.log("Такого не існує");
 // }
-// Якщо інакше
-if (goWalk === true) {
-  console.log("Гулять");
-} else {
-  console.log("Гуляти не ідем");
+
+const userChoice = "";
+
+switch (userChoice) {
+  case "espresso":
+    console.log("Ура, нарешті");
+    break;
+
+  case "latte":
+    console.log("latte");
+    break;
+
+  case "cappuccino":
+    console.log("cappuccino");
+    break;
+
+  default:
+    console.log("ця кавомашина не вміє робити цей вид кави");
+    break;
 }
-
-const cost = 500;
-
-if (cost <= 299) {
-  console.log("Підписка стандартна");
-} else if (cost >= 1000) {
-  console.log("Максимальна");
-} else if (cost >= 300) {
-  console.log("Medium");
-} else {
-  console.log(" У нас немає такого дорогого пакету бери інший");
-}
-
-const age = Number(prompt("Введіть Ваш вік?"));
-
-const isTrue =
-  age >= 18 ? console.log("Все ок") : console.log("Приходь пізніше");
