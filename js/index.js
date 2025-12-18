@@ -33,3 +33,37 @@ switch (userChoice) {
     console.log("ця кавомашина не вміє робити цей вид кави");
     break;
 }
+
+const a = 10; // глобальна область бачення(доступна всюди нище по коду)
+
+// b - телефон
+// {} - це кімната(Блок)
+// якщо річ у кімнаті - то ззовні її не видно
+// {} - блочна область бачення
+if (true) {
+  const b = 15;
+  console.log(b);
+}
+
+console.log(a); //10
+//console.log(b); // error
+
+// var - variable
+
+if (true) {
+  var c = 50;
+}
+
+console.log(c);
+c = 100;
+console.log(c);
+
+const role = "admin";
+switch (role) {
+  case "admin":
+    console.log("Повний доступ ");
+    const key = "QWERTY";
+    break;
+}
+
+console.log(key); // error
