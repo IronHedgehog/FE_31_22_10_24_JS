@@ -1,69 +1,48 @@
-// if ("latte") {
-//   console.log("latte");
-// } else if (userChoice == "cappuchino") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else if (userChoice == "americano") {
-// } else {
-//   console.log("Такого не існує");
+// let counter = 0;
+
+// counter +=1
+// counter++
+// counter = counter + 1
+// for (counter; counter < 60; counter++) {
+//   console.log(counter);
 // }
 
-const userChoice = "";
+// console.log(counter);
 
-switch (userChoice) {
-  case "espresso":
-    console.log("Ура, нарешті");
-    break;
+// 1) for - ключове слово
+// Круглі дужки складаються з 3-х частин
+// 1) перше що є в дужках це лічильник
+// 2) Умова роботи циклу
+// 3) рух лічильника у потрібну сторону за умовою
+// {} - тіло нашого циклу, те що виконується кожного разу
+// for (let i = 1; i < 10; i++) {
+//   console.log(i);
+// }
 
-  case "latte":
-    console.log("latte");
-    break;
+// let number = 7;
 
-  case "cappuccino":
-    console.log("cappuccino");
-    break;
+// for (number; number <= 70; number += 7) {
+//   console.log(number);
+// }
 
-  default:
-    console.log("ця кавомашина не вміє робити цей вид кави");
-    break;
+// const word = "Hello";
+
+// for (let i = 0; i < word.length; i++) {
+//   console.log(word[i]);
+// }
+
+let processes = true;
+
+while (processes) {
+  let userChoice = prompt("Введіть назву напою(Кава, чай, сік)");
+
+  if (userChoice == "off") {
+    processes = false;
+  } else {
+    console.log(" Ось ваше замовлення");
+    processes = false;
+    // break;
+  }
+
+  // processes = false;
 }
-
-const a = 10; // глобальна область бачення(доступна всюди нище по коду)
-
-// b - телефон
-// {} - це кімната(Блок)
-// якщо річ у кімнаті - то ззовні її не видно
-// {} - блочна область бачення
-if (true) {
-  const b = 15;
-  console.log(b);
-}
-
-console.log(a); //10
-//console.log(b); // error
-
-// var - variable
-
-if (true) {
-  var c = 50;
-}
-
-console.log(c);
-c = 100;
-console.log(c);
-
-const role = "admin";
-switch (role) {
-  case "admin":
-    console.log("Повний доступ ");
-    const key = "QWERTY";
-    break;
-}
-
-console.log(key); // error
