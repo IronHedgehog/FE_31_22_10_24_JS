@@ -1,52 +1,72 @@
-const students = ["Oleksii", "Єгор", "Стас"];
+const names = [];
+// Додати у кінець
+names.push("al;sdd;asd");
 
-const student1 = "Oleksii";
+names.push("НЕ РОБИТИ");
 
-const student2 = "Єгор";
+console.log(names);
+// Видалити з кінця
+names.pop();
 
-const student3 = "Стас";
+console.log(names);
 
-// console.log(students);
+// shift, unshift
+// Додає на початок
+names.unshift("qwe");
 
-// console.log(students[0]);
-// console.log(students[1]);
-// console.log(students[2]);
+console.log(names);
+// Видаляє з початку
+names.shift();
 
-// console.log(students.length);
+console.log(names);
 
-// for (let i = 0; i < students.length; i++) {
-//   console.log(students[i]);
+const toDoList = [];
+
+let attempts = 10;
+
+// while (attempts > 0) {
+//   const todo = prompt("Що робить будемо?");
+
+//   toDoList.push(todo);
+//   attempts -= 1;
+//   console.log(toDoList);
 // }
 
-// const numbers = [];
+// console.log(toDoList);
 
-// for (let index = 0; index <= 99; index++) {
-//   // numbers[index];
-//   console.log(numbers[index]);
-//   numbers[index] = index;
-//   // console.log(numbers[index]);
-// }
+// split join
 
-// const players = ["Artem", "Petro", "Artem"];
+const words = "I love JS";
 
-// const player = "Petro";
+const wordsSplit = words.split(" ");
 
-// for (let i = 0; i < players.length; i++) {
-//   if (player === players[i]) {
-//     console.log("Такий гравець вже є");
-//     break;
-//   }
-//   console.log("Ласкаво просимо");
-// }
+console.log(wordsSplit);
 
-const nums = [30, 15, 370, 2000, 324];
-// console.log(Math.max(...nums));
+const wordsJoin = wordsSplit.join(" ");
 
-let bigInt = 0;
-for (let i = 0; i < nums.length; i++) {
-  if (nums[i] > bigInt) {
-    bigInt = nums[i];
-  }
+console.log(wordsJoin);
+
+// slice
+
+const numbers = [1, 23, 4, 5, 6];
+
+const start = numbers.indexOf(24);
+
+if (start > 0) {
+  console.log(numbers.slice(start, 2));
 }
 
-console.log(bigInt);
+const numbers1 = [10, 20, 30, 40, 50];
+
+const start1 = numbers1.indexOf(40);
+console.log(start1);
+console.log("Splice", numbers1.splice(start1, 5, 60, 70, 80, 90, 100));
+
+console.log("Масив", numbers1);
+
+const numbers3 = numbers.concat(numbers1);
+console.log(numbers3);
+
+console.log("SLICE COPY", numbers.slice());
+
+console.log("ARRAY", numbers);
