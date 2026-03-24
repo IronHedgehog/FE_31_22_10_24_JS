@@ -1,92 +1,80 @@
-// // // Обʼєкт -  набір властивостей які записуються як ключ: значення
-
-// const student = {
-//   dress: ["Портфель", "Курточка", "ручка", "зошит"],
-//   friends: ["friend1", "friend2", "friend3"],
-//   gadgets: ["phone", "tablet"],
-//   money: "20Є",
-//   name: "Artem",
-//   location: {
-//     lon: "Широта",
-//     let: " Довгота",
+// let pirat = {
+//   name: "jex",
+//   pet: "papygai",
+//   oryjue: "mech",
+//   money: 0,
+//   pograbyvanie: function () {
+//     this.money += 100;
 //   },
-//   sleepOnLessons(lesson) {
-//     if (lesson) {
-//       console.log("Я сплю");
-//     } else {
-//       console.log("Сплю дома");
-//     }
-//   },
-//   makeMoney(money) {
-//     student.money = student.money + money;
-//   },
-//   plusFriend(newFriend) {
-//     student.friends.push(newFriend);
-//   },
-//   isBlocked: true,
 // };
-// for (const key in student) {
-//   console.log(student[key]);
+
+// class Pirate {
+//   constructor(name, pet, oryjue) {
+//     this.name = name;
+//     this.pet = pet;
+//     this.oryjue = oryjue;
+//     this.money = 0;
+//   }
+
+//   rob(scarb) {
+//     console.log("Do pirate work ...." + this.name);
+//     this.money += scarb;
+//   }
 // }
 
-// student.mood = "happy";
+// const Bob = new Pirate("BoB", "monkey", "sword");
+// const John = new Pirate("John", "sneak", "pistol");
 
-// // const keys = Object.keys(student);
-// // console.log(keys);
-// // const values = Object.values(student);
-// // console.log(values);
-// // const entries = Object.entries(student);
-// // console.log(entries);
+// John.rob(Math.floor(1 + Math.random() * 100 - 1));
 
-// const checks = [100, 400, 100000, 5000, 3000];
+// // .toFixed(2)
 
-// // ... - spread - розпилення
+// // console.log((Math.random() * 100) / 1000);
 
-// console.log(...checks);
-// console.log(...student);
+// console.log(John);
+// // extends - Наслідувати
+// class Captain extends Pirate {
+//   constructor(name, pet, weapon, ship) {
+//     // super - БАТЬКІВСЬКИЙ КОНСТРУКТОР
+//     super(name, pet, weapon);
+//     this.ship = ship;
+//   }
 
-// const maxCheck = Math.max(...checks);
-// console.log(maxCheck);
+//   command() {}
+// }
 
-const allProdcuts = [
-  { product: "sandwich", price: 20, count: 1 },
-  { product: "milk", price: 55, count: 2 },
-  { product: "butter", price: 80, count: 3 },
-  { product: "", price: 0, count: 0 },
-];
-function calculateTotalPrice(allProdcuts, productName) {
-  for (const product of allProdcuts) {
-    const {
-      // Якщо ключі повторюються за назвою, ви можете їх переназивати(:)
-      product: name,
-      price,
-      count,
-    } = product; //деструктуризація (розбірка обʼєкту)
-    console.log(name);
-    console.log(name);
-    if (product === productName) {
-      return price * count;
+// const captainOFtheShip = new Captain("Jack", "monkey", "gun", "ship");
+
+// console.log(captainOFtheShip.rob(Math.floor(1 + Math.random() * 100 - 1)));
+// console.log(captainOFtheShip);
+
+class Backpack {
+  constructor(books = []) {
+    // this; - посилання на конкретний рюкзак
+    this.books = books;
+  }
+
+  getBooks() {
+    return this.books;
+  }
+
+  addBook(book) {
+    this.books.push(book);
+  }
+
+  deleteBook(title) {
+    const deleteIndex = this.books.indexOf(title);
+
+    if (deleteIndex !== -1) {
+      this.books.splice(deleteIndex, 1);
     }
   }
-  return 0;
 }
-console.log(calculateTotalPrice(allProdcuts, "butter"));
 
-const user = {
-  name: "Artem",
-  location: {
-    latitude: 75.8572384,
-    longitude: 79.8848923,
-  },
-};
-// secondName = "Faust" - значення за замовчуванням
-const { secondName = "Faust" } = user;
+const newBackpack = new Backpack(["Biology", "Math", "Chemistry"]);
 
-console.log(secondName);
-
-const {
-  location: { latitude, longitude },
-} = user;
-
-console.log(user.location.latitude, user.location.longitude);
-console.log(latitude, longitude);
+console.log(newBackpack.getBooks());
+console.log(newBackpack.addBook("English"));
+console.log(newBackpack.getBooks());
+console.log(newBackpack.deleteBook("Chemistry"));
+console.log(newBackpack.getBooks());
