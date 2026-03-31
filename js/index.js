@@ -1,80 +1,30 @@
-// let pirat = {
-//   name: "jex",
-//   pet: "papygai",
-//   oryjue: "mech",
-//   money: 0,
-//   pograbyvanie: function () {
-//     this.money += 100;
-//   },
-// };
+// BOM - browser object module
 
-// class Pirate {
-//   constructor(name, pet, oryjue) {
-//     this.name = name;
-//     this.pet = pet;
-//     this.oryjue = oryjue;
-//     this.money = 0;
-//   }
+(navigator.geolocation.getCurrentPosition(
+  (location) => console.log(location),
+  (err) => console.error(`Error ${err.code}: ${err.message}`),
+),
+  // DOM - document object module
 
-//   rob(scarb) {
-//     console.log("Do pirate work ...." + this.name);
-//     this.money += scarb;
-//   }
-// }
+  console.log(document));
 
-// const Bob = new Pirate("BoB", "monkey", "sword");
-// const John = new Pirate("John", "sneak", "pistol");
+const petro = document.querySelector(".petro");
 
-// John.rob(Math.floor(1 + Math.random() * 100 - 1));
+const user = {
+  name: "Artem",
+};
 
-// // .toFixed(2)
+petro.textContent = user.name;
+petro.style.backgroundColor = "#d59214";
 
-// // console.log((Math.random() * 100) / 1000);
+const input = document.querySelector(".input");
 
-// console.log(John);
-// // extends - Наслідувати
-// class Captain extends Pirate {
-//   constructor(name, pet, weapon, ship) {
-//     // super - БАТЬКІВСЬКИЙ КОНСТРУКТОР
-//     super(name, pet, weapon);
-//     this.ship = ship;
-//   }
+const inputValue = input.value;
+console.log(inputValue);
 
-//   command() {}
-// }
-
-// const captainOFtheShip = new Captain("Jack", "monkey", "gun", "ship");
-
-// console.log(captainOFtheShip.rob(Math.floor(1 + Math.random() * 100 - 1)));
-// console.log(captainOFtheShip);
-
-class Backpack {
-  constructor(books = []) {
-    // this; - посилання на конкретний рюкзак
-    this.books = books;
-  }
-
-  getBooks() {
-    return this.books;
-  }
-
-  addBook(book) {
-    this.books.push(book);
-  }
-
-  deleteBook(title) {
-    const deleteIndex = this.books.indexOf(title);
-
-    if (deleteIndex !== -1) {
-      this.books.splice(deleteIndex, 1);
-    }
-  }
+if (inputValue.length < 7) {
+  const error = document.querySelector(".error");
+  error.textContent = "Нікнейм має бути більше 7 символів";
+  error.style.color = "#f00";
+  error.style.fontSize = "30px";
 }
-
-const newBackpack = new Backpack(["Biology", "Math", "Chemistry"]);
-
-console.log(newBackpack.getBooks());
-console.log(newBackpack.addBook("English"));
-console.log(newBackpack.getBooks());
-console.log(newBackpack.deleteBook("Chemistry"));
-console.log(newBackpack.getBooks());
