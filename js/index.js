@@ -1,30 +1,30 @@
-// BOM - browser object module
+const img = document.createElement("img"); // DOM-вузол(тег)
 
-(navigator.geolocation.getCurrentPosition(
-  (location) => console.log(location),
-  (err) => console.error(`Error ${err.code}: ${err.message}`),
-),
-  // DOM - document object module
+const list = document.querySelector("#list");
+img.src = "https://placehold.co/600x400";
+img.alt = "Картинка заповнювач";
+img.classList.add("img");
 
-  console.log(document));
+const firstLI = list.firstElementChild;
 
-const petro = document.querySelector(".petro");
+firstLI.append(img);
+console.log(img);
 
-const user = {
-  name: "Artem",
-};
+// const card = '<ul>
+//     <li>
+//       <a href="">asdas</a>
+//     </li>
+//     <li>
+//       <a href="">qwe</a>
+//     </li>
+//     <li>
+//       <a href="">zxc</a>
+//     </li>
+//     <li>
+//       <a href="">asd</a>
+//     </li>
+//   </ul >'
 
-petro.textContent = user.name;
-petro.style.backgroundColor = "#d59214";
+firstLI.innerHTML = '<a class="link" href="https://www.google.com">GOOGLE</a>';
 
-const input = document.querySelector(".input");
-
-const inputValue = input.value;
-console.log(inputValue);
-
-if (inputValue.length < 7) {
-  const error = document.querySelector(".error");
-  error.textContent = "Нікнейм має бути більше 7 символів";
-  error.style.color = "#f00";
-  error.style.fontSize = "30px";
-}
+firstLI.innerHTML = card;
