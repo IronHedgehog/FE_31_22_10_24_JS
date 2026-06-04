@@ -1,79 +1,36 @@
-// const img = document.createElement("img"); // DOM-вузол(тег)
+const colorList = document.getElementById("color");
 
-// const list = document.querySelector("#list");
-// img.src = "https://placehold.co/600x400";
-// img.alt = "Картинка заповнювач";
-// img.classList.add("img");
+function randomColors() {
+  const red = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const alpha = Math.random();
 
-// const firstLI = list.firstElementChild;
+  const randomColor = `rgba(${red},${green},${blue},${alpha})`;
 
-// firstLI.append(img);
-// console.log(img);
+  return randomColor;
+}
 
-// const card = `<ul>
-//     <li>
-//       <a href="">asdas</a>
-//     </li>
-//     <li>
-//       <a href="">qwe</a>
-//     </li>
-//     <li>
-//       <a href="">zxc</a>
-//     </li>
-//     <li>
-//       <a href="">asd</a>
-//     </li>
-//   </ul >`;
-
-// // firstLI.innerHTML = card;
-
-// document.body.innerHTML = card;
-
-const heroes = ["Batman", "Spider-Man", "Iron Man", "Hulk"];
-
-// Знайти елемент або багато елементів з якими ми будемо працювати
-// для пошуку коли щось одне берем querySelector ,якщо багато querySelectorALL
-
-const categories = document.querySelectorAll("#toys > .category");
-
-console.log(categories);
-
-console.log(`В нашому магазині ${categories.length} категорії товарів`);
-
-const count = [...categories].map((category) => {
-  const countItems = category.querySelectorAll("ul > li");
-
-  console.log(countItems.length);
+colorList.addEventListener("click", (cubeListener) => {
+  // console.log("target", cubeListener.target); // елемент на якому відбулася подія
+  // console.log("currentTarget", cubeListener.currentTarget); // це елемент на якому висить слухач події
+  // console.log(cubeListener.target.nodeName);
+  if (cubeListener.target.nodeName !== "LI") {
+    return;
+  }
+  const color = cubeListener.target.style.backgroundColor;
+  document.body.style.backgroundColor = color;
 });
 
-console.log(count);
+function cubes() {
+  const cube = document.createElement("li");
+  cube.classList.add("cube");
+  const color = randomColors();
 
-const img123 = [
-  { name: "item-1", img: "https://placehold.co/600x400" },
-  { name: "item-2", img: "https://placehold.co/600x400" },
-  { name: "item-3", img: "https://placehold.co/600x400" },
-];
+  cube.style.backgroundColor = color;
+  colorList.append(cube);
+}
 
-const imgs = document.querySelector(".imgs");
-
-imgs.style.display = "flex";
-console.log(imgs);
-
-// const body = document.body;
-console.log("asd");
-
-const markup = img123
-  .map(
-    ({ name, img }) => `
- <li class="img">
-      <a href="#">
-        <img class="img-img" src="${img}" alt="${name}" />
-      </a>
-    </li>
-`,
-  )
-  .join("");
-
-console.log(markup);
-
-imgs.insertAdjacentHTML("beforeend", markup);
+for (let i = 0; i <= 10000; i++) {
+  cubes();
+}
