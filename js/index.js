@@ -1,36 +1,27 @@
-const colorList = document.getElementById("color");
+const scrollNormal = document.querySelector(".vanilla");
+const scrollThrottled = document.querySelector(".throttled");
+const scrollDebounce = document.querySelector(".trailing");
 
-function randomColors() {
-  const red = Math.floor(Math.random() * 255);
-  const blue = Math.floor(Math.random() * 255);
-  const green = Math.floor(Math.random() * 255);
-  const alpha = Math.random();
+let counterVanila = 0;
+let counterThtrotled = 0;
+let scrollDebounced = 0;
 
-  const randomColor = `rgba(${red},${green},${blue},${alpha})`;
+const scrollHandlerVanila = (e) => {
+  scrollNormal.textContent = counterVanila;
+  counterVanila++;
+};
+const scrollHandlerThrotled = (e) => {
+  scrollThrottled.textContent = counterThtrotled;
+  counterThtrotled++;
+};
 
-  return randomColor;
-}
+const scrollHandlerDebounce = (e) => {
+  scrollDebounce.textContent = scrollDebounced;
+  scrollDebounced++;
+};
 
-colorList.addEventListener("click", (cubeListener) => {
-  // console.log("target", cubeListener.target); // елемент на якому відбулася подія
-  // console.log("currentTarget", cubeListener.currentTarget); // це елемент на якому висить слухач події
-  // console.log(cubeListener.target.nodeName);
-  if (cubeListener.target.nodeName !== "LI") {
-    return;
-  }
-  const color = cubeListener.target.style.backgroundColor;
-  document.body.style.backgroundColor = color;
-});
+document.addEventListener("scroll", scrollHandlerVanila);
 
-function cubes() {
-  const cube = document.createElement("li");
-  cube.classList.add("cube");
-  const color = randomColors();
+document.addEventListener("scroll", _.throttle(scrollHandlerThrotled, 300));
 
-  cube.style.backgroundColor = color;
-  colorList.append(cube);
-}
-
-for (let i = 0; i <= 10000; i++) {
-  cubes();
-}
+document.addEventListener("scroll", _.debounce(scrollHandlerDebounce, 300));

@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <ul class="color-list" id="color"></ul>
+    <p class="cta">Scroll me</p>
+
+    <div class="container">
+      <div class="box">
+        <p>No timing function</p>
+        <span class="output vanilla">0</span>
+      </div>
+
+      <div class="box">
+        <p>Throttled</p>
+        <span class="output throttled">0</span>
+      </div>
+
+      <div class="box">
+        <p>Trailing debounce</p>
+        <span class="output trailing">0</span>
+      </div>
+
+      <div class="box">
+        <p>Leading debounce</p>
+        <span class="output leading">0</span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.18.1/lodash.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
