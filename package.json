@@ -1,0 +1,27 @@
+{
+  "name": "fe_31_22_10_24_js",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IronHedgehog/FE_31_22_10_24_JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IronHedgehog/FE_31_22_10_24_JS/issues"
+  },
+  "homepage": "https://github.com/IronHedgehog/FE_31_22_10_24_JS#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "parcel-transformer-hbs": "^1.0.4"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.9"
+  }
+}
